@@ -6,10 +6,8 @@ process.stdin.on('readable', function() {
         var instruction = input.toString().trim();
         switch (instruction) {
 			case 'version':
-				console.log('process.versions');
+				console.log(process.versions.node);
 				break;
-			case !== 'version':
-				console.log('please write command "version"');
         }
     }
 });
