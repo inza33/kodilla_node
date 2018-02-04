@@ -8,14 +8,14 @@ process.stdin.on('readable', function() {
         var instruction = input.trim();
         switch(instruction) {
             case '/exit':
-                process.stdout.write('Quitting app!\n'');
+                process.stdout.write('Quitting app!\n');
                 process.exit();
                 break;
             case '/sayhello':
                 process.stdout.write('hello!\n');
                 break;
 			case '/getOSinfo':
-				process.stdout.write('Tutaj b?dzie info o systemie!\n');
+                OSinfo.print();
 			break;
             default:
                 process.stderr.write('Wrong instruction!\n');
