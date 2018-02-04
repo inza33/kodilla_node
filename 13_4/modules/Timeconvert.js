@@ -1,22 +1,15 @@
-var os = require('os');
 
-function getOSinfo() {
-    var type = os.type();
-    if(type === 'Darwin') {
-        type = 'OSX';
-    } else if(type === 'Windows_NT') {
-        type = 'Windows';
-    }
-    var release = os.release();
-    var cpu = os.cpus()[0].model;
-    var uptime = os.uptime();
-    var userInfo = os.userInfo();
-    console.log('System:', type);
-    console.log('Release:', release);
-    console.log('CPU model:', cpu);
-    console.log('Uptime: ~', (uptime / 60).toFixed(0), 'min');
-    console.log('User name:', userInfo.username);
-    console.log('Home dir:', userInfo.homedir);
+function secondsToHms(d) {
+    d = Number(d);
+    var h = Math.floor(d / 3600);
+    var m = Math.floor(d % 3600 / 60);
+    var s = Math.floor(d % 3600 % 60);
+
+    var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : "";
+    var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "";
+    var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
+    return hDisplay + mDisplay + sDisplay; 
 }
 
-exports.print = getOSinfo;
+
+exports.print2 = getTimeconvert;
