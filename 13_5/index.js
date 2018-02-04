@@ -1,3 +1,5 @@
+var OSinfo = require('./modules/OSInfo');
+
 process.stdin.setEncoding('utf-8');
 
 process.stdin.on('readable', function() {
@@ -7,7 +9,9 @@ process.stdin.on('readable', function() {
         switch (instruction) {
 			case 'version':
 				console.log(process.versions.node);
-				break;
+                break;
+            case '/getOSinfo':
+                OSinfo.print();
         }
     }
 });
