@@ -10,12 +10,11 @@ function getOSinfo() {
     }
     var release = os.release();
     var cpu = os.cpus()[0].model;
-    var uptime = require('Timeconvert');
     var userInfo = os.userInfo();
     console.log('System:'.green, type);
     console.log('Release:'.red, release);
     console.log('CPU model:'.blue, cpu);
-    console.log('Uptime: ~', uptime);
+    console.log('Uptime: ~', os.uptime);
     console.log('User name:', userInfo.username);
     console.log('Home dir:', userInfo.homedir);
 }
